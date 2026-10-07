@@ -1,0 +1,61 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+  background: transparent;
+  color: #ffffff;
+}
+
+/* Scrolled state: turns white with dark text */
+.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 0.9rem 3rem;
+  color: #000000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.callBtn {
+  background-color: var(--primary-sapphire);
+  color: #ffffff !important;
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.callBtn:hover {
+  background-color: #0b3d8c;
+  transform: translateY(-1px);
+}

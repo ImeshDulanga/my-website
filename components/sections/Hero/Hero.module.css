@@ -1,0 +1,130 @@
+/* Hero Container with Dark Overlay */
+.heroContainer {
+  position: relative;
+  background-color: #050b14;
+  color: #ffffff;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 3rem 60px 3rem;
+  background-image: linear-gradient(to right, rgba(5, 11, 20, 0.95), rgba(5, 11, 20, 0.7)), url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  font-style: italic;
+  color: #60a5fa;
+  font-weight: 400;
+}
+
+.description {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.primaryBtn {
+  background-color: var(--primary-sapphire);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metricValue {
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.metricLabel {
+  font-size: 0.7rem;
+  color: #64748b;
+  letter-spacing: 1px;
+  margin-top: 0.3rem;
+}
+
+/* Moving Ticker Bar Animation (Left to Right Infinite Scroll) */
+.tickerContainer {
+  background-color: #030712;
+  border-y: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tickerTrack {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+}
+
+.tickerItem {
+  display: inline-block;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-right: 3rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}

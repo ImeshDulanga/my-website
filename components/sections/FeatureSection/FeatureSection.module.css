@@ -1,0 +1,239 @@
+.sectionContainer {
+  background: #060b13;
+  color: #ffffff;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #f8fafc;
+}
+
+/* Carousel Container setup with 3D perspective */
+.carouselWrapper {
+  width: 100%;
+  max-width: 1200px;
+  height: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+/* Individual Card Styling (Styled like the Image) */
+.card {
+  position: absolute;
+  width: 360px;
+  min-height: 420px;
+  background: #0d1526;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, filter, opacity;
+}
+
+/* Card Window Top Header (Mac Style Dots) */
+.cardHeader {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.windowDots {
+  display: flex;
+  gap: 6px;
+}
+
+.dotRed, .dotYellow, .dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed { background-color: #ff5f56; }
+.dotYellow { background-color: #ffbd2e; }
+.dotGreen { background-color: #27c93f; }
+
+.badgeTag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Card Main Body Content */
+.cardBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.categoryTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryTag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Checklist / Feature Points inside Card */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cardFooter {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #38bdf8;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3D Positions & Dynamic Blur States */
+
+/* Middle Popup Center Card */
+.activeCenter {
+  transform: translate3d(0, 0, 0) scale(1.1);
+  z-index: 10;
+  opacity: 1;
+  filter: blur(0px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 30px 60px rgba(56, 189, 248, 0.2);
+}
+
+/* Immediate Left Card */
+.prevLeft {
+  transform: translate3d(-320px, 0, -100px) scale(0.88);
+  z-index: 5;
+  opacity: 0.7;
+  filter: blur(3px); /* Blur Effect */
+}
+
+/* Immediate Right Card */
+.nextRight {
+  transform: translate3d(320px, 0, -100px) scale(0.88);
+  z-index: 5;
+  opacity: 0.7;
+  filter: blur(3px); /* Blur Effect */
+}
+
+/* Far Background Cards */
+.farLeft {
+  transform: translate3d(-580px, 0, -200px) scale(0.75);
+  z-index: 1;
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+.farRight {
+  transform: translate3d(580px, 0, -200px) scale(0.75);
+  z-index: 1;
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+.hiddenCard {
+  transform: translate3d(0, 0, -300px) scale(0.5);
+  z-index: 0;
+  opacity: 0;
+  filter: blur(10px);
+}
+
+/* Navigation Indicator Dots */
+.dotsWrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: #38bdf8;
+  width: 28px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
