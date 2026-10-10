@@ -27,15 +27,15 @@ export default function Header() {
 
       {/* Navigation Links */}
       <nav className={styles.navLinks}>
-        <a href="#features">FEATURES</a>
-        <a href="#hardware">HARDWARE</a>
-        <a href="#pricing">PRICING</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#feature">FEATURES</a>
+        <a href="#pricing">OUR PACKAGES</a>
+        <a href="#contact">CONTACT US</a>
       </nav>
 
       {/* Call-to-action button */}
       <a href="#contact" className={styles.callBtn}>
-        GET DEMO NOW
+        GET QUOTE NOW
       </a>
     </header>
   );

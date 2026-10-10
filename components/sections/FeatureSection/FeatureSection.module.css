@@ -1,4 +1,5 @@
 .sectionContainer {
+  scroll-margin-top: 80px;
   background: #060b13;
   color: #ffffff;
   padding: 100px 20px;

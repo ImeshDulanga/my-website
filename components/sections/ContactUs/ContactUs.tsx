@@ -51,16 +51,16 @@ export default function ContactUs() {
         {/* Left Side Content matching screenshot design */}
         <div>
           <h2 className={styles.heading}>
-            <span className={styles.italic}>Get your POS System</span> <br />
+            <span>Get your POS System</span> <br />
             installed today.
           </h2>
 
           <p className={styles.description}>
-            Fill out the form and our specialist will call you back in less than 2 minutes to confirm your business requirements and setup date.
+            Fill out the form below and our software specialist will reach out shortly to discuss your specific business workflow, setup details, and hardware configuration.
           </p>
 
           <p className={styles.description}>
-            Prefer not to wait? Contact us directly on WhatsApp — we respond in seconds.
+            Need quick answers? Message us on WhatsApp for immediate guidance and product details.
           </p>
 
           <div className={styles.whatsappContainer}>
@@ -71,7 +71,7 @@ export default function ContactUs() {
         </div>
 
         {/* Right Side Form matching screenshot design */}
-        <div className={styles.formCard}>
+        <div id="quote-form" className={styles.formCard}>
           <form onSubmit={handleSubmit}>
             <div className={styles.fieldGroup}>
               <label className={styles.fieldLabel}>FULL NAME</label>
@@ -108,6 +108,22 @@ export default function ContactUs() {
                 <option value="Supermarket">Supermarket</option>
                 <option value="Restaurant / Cafe">Restaurant / Cafe</option>
                 <option value="Pharmacy">Pharmacy</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div className={styles.fieldGroup}>
+              <label className={styles.fieldLabel}>Choose Your POS Plan</label>
+              <select
+                className={styles.selectField}
+                value={formData.businessType}
+                onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
+              >
+                <option value="Retail Store">Plan A</option>
+                <option value="Supermarket">Plan B</option>
+                <option value="Restaurant / Cafe">Plan C</option>
+                <option value="Pharmacy">Plan D</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -123,15 +139,9 @@ export default function ContactUs() {
               />
             </div>
 
-            <div className={styles.toggleContainer}>
-              <div className={styles.toggleSwitch}>
-                <div className={styles.toggleDot} />
-              </div>
-              <span className={styles.toggleText}>I prefer to be contacted via WhatsApp</span>
-            </div>
 
             <button type="submit" disabled={loading} className={styles.submitBtn}>
-              {loading ? "SENDING..." : "GET FREE DEMO & QUOTE"}
+              {loading ? "SENDING..." : "GET FREE QUOTE"}
             </button>
 
             {status && (
@@ -141,7 +151,7 @@ export default function ContactUs() {
             )}
 
             <p className={styles.footerNote}>
-              We call back in less than 2 minutes • No charges until installation
+              We call back within 1 day • No charges until installation
             </p>
           </form>
         </div>

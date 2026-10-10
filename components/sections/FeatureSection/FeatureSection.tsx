@@ -24,7 +24,7 @@ const businessCards: BusinessCard[] = [
       "Barcode & QR Code Scanner support",
       "Offline Mode billing during internet drops",
       "Custom receipt design with company logo",
-      "Multi-counter sync for fast checkout",
+      "Multi counter sync for fast checkout",
     ],
     actionText: "Explore Billing Features →",
     headerColor: "#0284c7",
@@ -33,12 +33,12 @@ const businessCards: BusinessCard[] = [
     id: 1,
     tag: "FEATURE 02",
     category: "SMART INVENTORY CONTROL",
-    title: "Never run out of fast-selling stock",
+    title: "Never run out of fast selling stock",
     points: [
-      "Low-stock alert notifications",
+      "Low stock alert notifications",
       "Automated Purchase Order creation",
       "Expiry date & Batch tracking",
-      "Multi-warehouse inventory management",
+      "Fast warehouse inventory management",
     ],
     actionText: "View Inventory Tools →",
     headerColor: "#0d9488",
@@ -52,7 +52,7 @@ const businessCards: BusinessCard[] = [
       "Daily profit & loss reporting",
       "Top-selling product analytics",
       "Salesperson performance tracking",
-      "Mobile App dashboard access",
+      "Admin panel dashboard access",
     ],
     actionText: "Check Reports Dashboard →",
     headerColor: "#d97706",
@@ -60,13 +60,13 @@ const businessCards: BusinessCard[] = [
   {
     id: 3,
     tag: "FEATURE 04",
-    category: "RESTAURANT & KOT MODE",
-    title: "Streamline kitchen orders & tables",
+    category: "CUSTOM SOFTWARE SOLUTIONS",
+    title: "Tailored software built for your workflow",
     points: [
-      "Kitchen Order Ticket (KOT) printing",
-      "Table layout & Reservation tracking",
-      "Recipe costing & ingredient usage",
-      "Split bill & Discount management",
+      "3+ years building specialized business applications",
+      "Custom Web, Mobile & Desktop solutions",
+      "Seamless integration with existing databases",
+      "Scalable architecture designed for enterprise growth",
     ],
     actionText: "See Restaurant Features →",
     headerColor: "#7c3aed",
@@ -74,15 +74,15 @@ const businessCards: BusinessCard[] = [
   {
     id: 4,
     tag: "FEATURE 05",
-    category: "CUSTOMER LOYALTY & SMS",
-    title: "Grow repeat customers effortlessly",
+    category: "ULTRA-FAST LOCAL ENGINE & BACKUPS",
+    title: "High speed offline performance with smart backups",
     points: [
-      "Points-based loyalty system",
-      "SMS receipt & promotional messages",
-      "Customer credit/khata ledger",
-      "VIP discount tier management",
+      "Built natively in C# for lightning fast local execution",
+      "Works 100% offline with zero dependence on internet cloud",
+      "One-click instant local database backup & restore",
+      "Optional automatic cloud sync & offsite database backups",
     ],
-    actionText: "Learn Loyalty Program →",
+    actionText: "Explore Speed & Backup System →",
     headerColor: "#2563eb",
   },
   {
@@ -91,10 +91,10 @@ const businessCards: BusinessCard[] = [
     category: "HARDWARE COMPATIBILITY",
     title: "Plug & Play with any POS Hardware",
     points: [
-      "Thermal Receipt Printers (USB/LAN/BT)",
+      "Thermal Receipt Printers",
       "Cash Drawer & Pole Display support",
-      "Android POS & Windows Compatibility",
-      "1 Year Hardware Warranty included",
+      "Barcode & QR Code Scanners",
+      "Hardware Warranty included",
     ],
     actionText: "Check Compatible Hardware →",
     headerColor: "#059669",
@@ -125,7 +125,7 @@ export default function FeatureSection(): React.ReactElement {
   };
 
   return (
-    <section className={styles.sectionContainer}>
+    <section id="feature" className={styles.sectionContainer}>
       <div className={styles.sectionHeader}>
         <span className={styles.subTitle}>FEATURES</span>
         <h2 className={styles.mainTitle}>Everything your store needs to operate smoothly</h2>

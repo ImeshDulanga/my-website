@@ -11,10 +11,10 @@ export default function Footer(): React.ReactElement {
         {/* Brand Column */}
         <div className={styles.brandCol}>
           <div className={styles.brandLogo}>
-            Brand<span className={styles.logoAccent}>Name</span>
+            Smart<span className={styles.logoAccent}>HQ</span>
           </div>
           <p className={styles.brandText}>
-            Your company description goes here. Briefly explain what you do and how you can help your customers.
+            Smart software and reliable POS technology engineered for modern Sri Lankan enterprises. Fast billing, secure local database management, and tailored digital innovation.
           </p>
         </div>
 
@@ -23,38 +23,22 @@ export default function Footer(): React.ReactElement {
           <h3 className={styles.colHeading}>Quick Links</h3>
           <ul className={styles.linkList}>
             <li className={styles.linkItem}>
-              <a href="/about">About Us</a>
+              <a href="#about">About Us</a>
             </li>
             <li className={styles.linkItem}>
-              <a href="/services">Services</a>
+              <a href="#feature">Features</a>
             </li>
             <li className={styles.linkItem}>
-              <a href="/portfolio">Portfolio</a>
+              <a href="#pricing">Our Packages</a>
             </li>
             <li className={styles.linkItem}>
-              <a href="/blog">Blog</a>
+              <a href="#contact">Contact Us</a>
             </li>
           </ul>
         </div>
-
-        {/* Links Column 2 */}
-        <div>
-          <h3 className={styles.colHeading}>Resources</h3>
-          <ul className={styles.linkList}>
-            <li className={styles.linkItem}>
-              <a href="/help-center">Help Center</a>
-            </li>
-            <li className={styles.linkItem}>
-              <a href="/documentation">Documentation</a>
-            </li>
-            <li className={styles.linkItem}>
-              <a href="/support">Support</a>
-            </li>
-          </ul>
-        </div>
-
+        
         {/* Contact Column */}
-        <div>
+        <div className={styles.contactCol}>
           <h3 className={styles.colHeading}>Contact Us</h3>
           <ul className={styles.contactList}>
             <li className={styles.contactItem}>
@@ -66,12 +50,8 @@ export default function Footer(): React.ReactElement {
               <span>info@company.com</span>
             </li>
             <li className={styles.contactItem}>
-              <MapPin className={styles.icon} />
-              <span>123 Main Street, City, State 12345</span>
-            </li>
-            <li className={styles.contactItem}>
               <Clock className={styles.icon} />
-              <span>Mon-Fri: 9AM - 5PM</span>
+              <span>Mon-Sunday: 24 Hours</span>
             </li>
           </ul>
         </div>
@@ -79,7 +59,7 @@ export default function Footer(): React.ReactElement {
 
       {/* Bottom Bar */}
       <div className={styles.bottomBar}>
-        <p>&copy; {new Date().getFullYear()} BrandName. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} SmartHQ. All rights reserved.</p>
         <div className={styles.legalLinks}>
           <a href="/privacy-policy">Privacy Policy</a>
           <a href="/terms-of-service">Terms of Service</a>

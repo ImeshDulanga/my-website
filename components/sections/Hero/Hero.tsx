@@ -7,16 +7,16 @@ export default function Hero() {
       <section className={styles.heroContainer}>
         <div className={styles.contentWrapper}>
           {/* Status Badge */}
-          <div className={styles.badge}>● NEXT GEN POS SYSTEM • READY</div>
+          <div className={styles.badge}>● POWERFUL PERFORMANCE • 3+ YEARS EXCELLENCE</div>
 
           {/* Headline for POS System */}
           <h1 className={styles.title}>
-            Smart POS System <br />
-            <span className={styles.highlight}>Built for Modern Retail.</span>
+            Empower Your Store With <br />
+            <span className={styles.highlight}>Powerful POS Systems.</span>
           </h1>
 
           <p className={styles.description}>
-            All-in-one POS software and hardware solution to manage inventory, sales, and payments effortlessly.
+            High performance POS and custom desktop solutions engineered to keep your billing counter moving fast even when internet connection drops.
           </p>
 
           {/* Action Buttons */}
@@ -32,12 +32,12 @@ export default function Hero() {
               <div className={styles.metricLabel}>SYSTEM UPTIME</div>
             </div>
             <div>
-              <div className={styles.metricValue}>24/7</div>
-              <div className={styles.metricLabel}>TECHNICAL SUPPORT</div>
+              <div className={styles.metricValue}>3+</div>
+              <div className={styles.metricLabel}>YEARS OF DEDICATED EXPERIENCE</div>
             </div>
             <div>
-              <div className={styles.metricValue}>500+</div>
-              <div className={styles.metricLabel}>ACTIVE STORES</div>
+              <div className={styles.metricValue}>100%</div>
+              <div className={styles.metricLabel}>DATA PRIVACY & LOCAL BACKUPS</div>
             </div>
           </div>
         </div>
@@ -55,6 +55,8 @@ export default function Hero() {
           <span className={styles.tickerItem}>★ INVENTORY MANAGEMENT</span>
           <span className={styles.tickerItem}>★ BARCODE SCANNING</span>
           <span className={styles.tickerItem}>★ REAL-TIME ANALYTICS</span>
+          <span className={styles.tickerItem}>★ THERMAL PRINTER SUPPORT</span>
+          <span className={styles.tickerItem}>★ CLOUD BACKUP</span>
         </div>
       </div>
     </>
