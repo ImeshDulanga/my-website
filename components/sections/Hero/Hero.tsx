@@ -1,7 +1,30 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import heroImage from "../../../asset/hero.jpg";
 import styles from "./Hero.module.css";
 
+const slides = [
+  {
+    image: heroImage,
+    alt: "Point-of-sale system in a retail setting",
+  },
+];
+
 export default function Hero() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (slides.length < 2) return;
+
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <>
       <section className={styles.heroContainer}>
@@ -40,6 +63,38 @@ export default function Hero() {
               <div className={styles.metricLabel}>DATA PRIVACY & LOCAL BACKUPS</div>
             </div>
           </div>
+        </div>
+        <div
+          className={styles.slideshow}
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="POS system images"
+        >
+          {slides.map((slide, index) => (
+            <Image
+              key={slide.image.src}
+              className={`${styles.slideImage} ${index === activeSlide ? styles.activeSlide : ""}`}
+              src={slide.image}
+              alt={slide.alt}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 900px) 100vw, 45vw"
+            />
+          ))}
+          {slides.length > 1 && (
+            <div className={styles.slideControls} aria-label="Choose hero image">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.image.src}
+                  type="button"
+                  className={`${styles.slideDot} ${index === activeSlide ? styles.activeDot : ""}`}
+                  onClick={() => setActiveSlide(index)}
+                  aria-label={`Show image ${index + 1}`}
+                  aria-current={index === activeSlide}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

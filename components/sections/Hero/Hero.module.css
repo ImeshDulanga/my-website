@@ -1,32 +1,77 @@
-/* Hero Container with Dark Overlay */
 .heroContainer {
   position: relative;
   overflow: hidden;
   background-color: #050b14;
   color: #ffffff;
   min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 140px 3rem 60px 3rem;
-}
-
-.heroContainer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(to right, rgba(5, 11, 20, 0.95), rgba(5, 11, 20, 0.7)), url('../../../asset/hero.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: heroImageZoom 20s ease-in-out infinite alternate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: 140px clamp(2rem, 6vw, 6rem) 60px;
 }
 
 .contentWrapper {
   position: relative;
   z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 760px;
+  margin: 0 0 0 auto;
   width: 100%;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 620px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background: #0b1422;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(5, 11, 20, 0.18), transparent 60%);
+}
+
+.slideImage {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.activeSlide {
+  opacity: 1;
+}
+
+.slideControls {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.25rem;
+  left: 50%;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+
+.slideDot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.activeDot {
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
 }
 
 .badge {
@@ -65,7 +110,7 @@
 .buttonGroup {
   display: flex;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 .primaryBtn {
@@ -94,7 +139,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding-top: 2rem;
+  padding-top: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -111,7 +156,6 @@
   margin-top: 0.3rem;
 }
 
-/* Moving Ticker Bar Animation (Left to Right Infinite Scroll) */
 .tickerContainer {
   background-color: #030712;
   border-y: 1px solid rgba(255, 255, 255, 0.1);
@@ -139,13 +183,30 @@
   100% { transform: translateX(0%); }
 }
 
-@keyframes heroImageZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.08); }
+@media (max-width: 900px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 120px 2rem 50px;
+  }
+
+  .contentWrapper {
+    max-width: none;
+    margin: 0;
+  }
+
+  .slideshow {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroContainer::before {
+  .slideImage {
+    transition: none;
+  }
+
+  .tickerTrack {
     animation: none;
   }
 }
